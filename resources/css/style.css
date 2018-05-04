@@ -1,0 +1,249 @@
+html {
+  font-size: 16px;
+}
+/* For Hiding elements temporarily e.g. during a round phase */
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+p {
+  margin-top: 0;
+}
+
+/* Rules */
+.roundTextContainer {
+  height:12rem;
+  padding: 1rem 0;
+  z-index: 2;
+}
+.modal-container {
+  z-index: 1;
+  opacity: 1;
+  position: fixed;
+  background-color: #fff;
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 2rem;
+  color: black;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  width: 70%;
+  max-width: 400px;
+}
+.initialModal, .initialSettings {
+  opacity: 0;
+}
+.initialModal, .initialSettings, .modal-container,
+.modal:before, .settings-modal:before {
+transition: opacity .25s ease-in-out;
+-moz-transition: opacity .25s ease-in-out;
+-webkit-transition: opacity .25s ease-in-out;
+}
+.modal:before, .settings-modal:before {
+  opacity: 0.7;
+  content: '';
+  position: fixed;
+  background-color: rgba(0,0,0,.7);
+  top:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  -webkit-transition: all 500ms ease-out;
+}
+
+body {
+  font-family: helvetica, sans-serif;
+  color: white;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-color: #b70303;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+}
+h1 {
+  font-size: 3rem;
+  padding: 2rem 0;
+  text-shadow:
+  -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
+}
+#settingsContent, #rulesContent h1, h1, .num, .statsTable th, .btn,
+.finalTable th {
+  font-family: 'Press Start 2P', impact, helvetica, sans-serif;
+}
+#rulesContent h1 {
+  font-size: 2rem;
+}
+#rulesContent p, #rulesContent li, input {
+  font-family: 'Architects Daughter', helvetica, sans-serif;
+}
+.rulesList li {
+  list-style-type: circle;
+}
+li {
+  display: flex;
+  align-items: center;
+  font-family: 'Luckiest Guy', helvetica, sans-serif;
+}
+.btn {
+  background-color: rgb(234, 93, 11, 0.3);
+  cursor: pointer;
+  font-size: 1rem;
+  color: #f7f700;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow:
+  -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
+}
+.btn:hover, #saveSettings:hover {
+  background-color: #efe007;
+  color: red;
+}
+.initialBtn {
+  width: 10rem;
+  height: 3rem;
+}
+.rulesArrows {
+  max-width: 2rem;
+  max-height: 2rem;
+}
+#rulesContent {
+  padding: 1rem;
+}
+.rules-bottom-bar, #rules-bottom-bar-right, .settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.settings-row {
+  padding: 0.5rem;
+}
+#rules-bottom-bar-right {
+  width: 5rem;
+}
+.rulesArrows {
+  cursor: pointer;
+}
+.teamBtn {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    background-color: rgba(247, 255, 248, 0.1);
+    height: 2rem;
+    border: none;
+    border-bottom: 2px solid white;
+    padding: 0.5rem 0;
+    margin: 0;
+}
+ input {
+  background-color: rgba(247, 255, 248, 0.1);
+  height: 2rem;
+  width: 10rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: 1rem;
+}
+input:focus, button:focus {
+  outline: 0;
+}
+.addPlayerBtn {
+  width: 20rem;
+  height: 3rem;
+}
+input::placeHolder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.6;
+}
+.deleteBtn, .helpBtn  {
+  height: 2rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+.deleteBtn {
+  margin-left: 0.5rem;
+}
+.addItemBtn {
+  height:3rem;
+  width:3rem;
+  cursor: pointer;
+}
+#list {
+  font-size: 2rem;
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#list li {
+  display: flex;
+  align-items: center;
+}
+.roundText, .noMorePassesSpan {
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Luckiest Guy', helvetica, sans-serif;
+}
+.teamNames, .playerContainer {
+  margin-right: 0.5rem;
+
+}
+ .teamNames {
+  margin-left: 0;
+}
+.teamColor {
+  color: blue;
+}
+.categoryColor {
+  color: teal;
+}
+.describerColor, .noMorePassesSpan {
+  color: yellow;
+}
+.noMorePassesSpan, .winnersText {
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+.winnersText {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+#helpContentID, .drinkTextBox {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.drinkTextBox {
+  max-width: 70%;
+}
+#helpContentID span, .drinkTextBox p {
+  font-family: 'Architects Daughter', helvetica, sans-serif;
+}
+#saveSettings {
+	background: #e52806;
+  color: #23ff2e;
+}
