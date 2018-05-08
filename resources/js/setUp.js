@@ -115,6 +115,7 @@ setTimeout(function(){
 
     let thirty = 30;
     let fortyfive = 45;
+    //                                            CHANGE THIS BACK WHEN DONE TESTING!! Change timer here and in variables
   let settingsHTML = `<h1>Settings</h1>
                       <div class='settings-row'>
                         <span>Points needed to win</span>
@@ -131,7 +132,7 @@ setTimeout(function(){
                       <div class='settings-row'>
                         <span>Timer for each Round(seconds)</span>
                         <select id='timerSelect'>
-                          <option value='${thirty}'>${thirty}</option>
+                          <option value='${five}'>${five}</option>
                           <option value='${fortyfive}'>${fortyfive}</option>
                           <option value='${sixty}'>${sixty}</option>
                         </select>
@@ -150,10 +151,11 @@ setTimeout(function(){
                       <div class='settings-row'>
                         <span>Drinking Rules</span>
                         <select id='drinkingSelect'>
-                          <option value='Enabled'>Enabled</option>
                           <option value='Disabled'>Disabled</option>
+                          <option value='Enabled'>Enabled</option>
                         </select>
                       </div>`;
+                      // INSERT SOMETHING SO THAT PEOPLE KNOW THAT THEY ARE DRINKING AT THEIR OWN RISK/SHOULD DRINK RESPONSIBLY ETC
 // Change relevant button functions
   document.getElementById('settingsContent').innerHTML = settingsHTML;
   document.getElementById('closeSettings').addEventListener('click', hideSettings);

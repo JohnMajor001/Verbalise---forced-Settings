@@ -60,25 +60,20 @@ function roundBegins() {
   passBtn.addEventListener('click', passed);
   readyBtn.removeEventListener('click', roundBegins);
   readyBtn.addEventListener('click', gotIt);
-
   // Finding which array to use
   var currentTeam = teamObjectsArray[whichTeamPlays%teamObjectsArray.length];
   var checkPosition = (currentTeam.position - 1)%categories.length;
   var catToUse = categories[checkPosition];
-
   // Check if array needs to be repopulated
     if(catToUse.array.length == 2) {
       for(i = 0; i < catToUse.backUpArray.length; i++) {
         catToUse.array.push(backUpArray[i]);
         }
       }
-
   var randomIndex = Math.floor(Math.random() * catToUse.array.length);
   var word = catToUse.array[randomIndex];
   var wordBox = document.getElementById('spanWithWordToDescribe');
   wordBox.innerHTML = word;
-
-
   // Start Timer
   t = timer - 1;
   var timeLength = timer * 1000;
@@ -96,7 +91,6 @@ function roundBegins() {
     }
     setTimeout(stopUpdating, timeLength);
 }
-
 function roundEnds() {
      //clear Board
   while(list.firstChild) {
@@ -145,15 +139,6 @@ function roundEnds() {
       var drinkDivContent = `<h1>NOOBS</h1>
                             <p><span class='teamColor'>${currentTeam.name}</span> take 3 drinks each for that abysmal performance.<br /><br />Trouts</p>`;
     } else {
-      /* if(drinkCatToUse.name == 'People and Characters') {
-      let optionHere = `${document.getElementById('teamAfterRound').innerHTML}, do an impression of one of the characters in the list above,
-       whoever does the worst one drinks.`;
-      drinksArray.push(optionHere);
-    }
-      let randoNumero = Math.floor(Math.random() * drinksArray.length);
-      var drinkDivContent = `<h1>LOOKY HERE</h1>
-                            <p>${drinksArray[randoNumero]}</p>`; // IF UNDEFINED APPEARS PUT MINUS 1 AFTER .LENGTH
-      drinksArray.pop(); */
       let randoNumero = Math.floor(Math.random() * tempDrinkingRules.length);
       var randomDrinkLine = tempDrinkingRules[randoNumero];
        var drinkDivContent = `<h1>Pints Pints Pints</h1>
@@ -189,11 +174,10 @@ function mistakes() {
   mistakesWereMade.removeEventListener('click', mistakes);
   mistakesWereMade.innerHTML = 'Back';
   // change Event LISTENERS
-    //clear Board
+  //clear Board
   while(list.firstChild) {
    list.removeChild(list.firstChild);
   }
-
   if(drinkRules) {
     var helpContentEndMessage = 'Also, take a drink for your incompetence, Noob.';
   } else {
@@ -241,28 +225,28 @@ function back() {
 }
 function decrement() {
 // document.getElementById('numberToChange').innerHTML;
-if(usefulNumber == 0) {
-  let passesAllGone = document.getElementById('noMorePassesSpan');
-  passesAllGone.className = 'noMorePassesSpan';
-  passesAllGone.innerHTML = 'Can\'t do that.';
-  setTimeout(function(){passesAllGone.className = 'hidden';}, 2000);
-  return;
-  } else {
-  usefulNumber--;
-  document.getElementById('numberToChange').innerHTML = usefulNumber;
-  }
+  if(usefulNumber == 0) {
+    let passesAllGone = document.getElementById('noMorePassesSpan');
+    passesAllGone.className = 'noMorePassesSpan';
+    passesAllGone.innerHTML = 'Can\'t do that.';
+    setTimeout(function(){passesAllGone.className = 'hidden';}, 2000);
+    return;
+    } else {
+    usefulNumber--;
+    document.getElementById('numberToChange').innerHTML = usefulNumber;
+    }
 }
 function increment() {
-if(usefulNumber == wordsSuccessfullyDescribed.length) {
-  let passesAllGone = document.getElementById('noMorePassesSpan');
-  passesAllGone.className = 'noMorePassesSpan';
-  passesAllGone.innerHTML = 'Cheeky! Can\'t do that.';
-  setTimeout(function(){passesAllGone.className = 'hidden';}, 2000);
-  return;
-  } else {
-  usefulNumber++;
-  document.getElementById('numberToChange').innerHTML = usefulNumber;
-  }
+  if(usefulNumber == wordsSuccessfullyDescribed.length) {
+    let passesAllGone = document.getElementById('noMorePassesSpan');
+    passesAllGone.className = 'noMorePassesSpan';
+    passesAllGone.innerHTML = 'Cheeky! Can\'t do that.';
+    setTimeout(function(){passesAllGone.className = 'hidden';}, 2000);
+    return;
+    } else {
+    usefulNumber++;
+    document.getElementById('numberToChange').innerHTML = usefulNumber;
+    }
 }
 function gotIt() {
   var wordBox = document.getElementById('spanWithWordToDescribe');
@@ -282,10 +266,8 @@ function gotIt() {
         catToUse.array.push(backUpArray[i]);
         }
       }
-
     var randomIndex = Math.floor(Math.random() * catToUse.array.length);
     var newWord = catToUse.array[randomIndex];
-
     wordBox.innerHTML = newWord;
     currentTeam.score++;
     setTimeout(function() {
@@ -293,7 +275,6 @@ function gotIt() {
     }, 400);
   }
 }
-
 function passed() {
   var passBtn = document.getElementById('passBtn');
 var currentTeam = teamObjectsArray[whichTeamPlays%teamObjectsArray.length];
@@ -319,19 +300,17 @@ var currentTeam = teamObjectsArray[whichTeamPlays%teamObjectsArray.length];
       }
     }
 
-    var randomIndex = Math.floor(Math.random() * catToUse.array.length); // IF UNDEFINED EVER APPEARS IN DESCRIBE BOX, ADD A MINUS 1 HERE
+    var randomIndex = Math.floor(Math.random() * catToUse.array.length);
     var newWord = catToUse.array[randomIndex];
     wordBox.innerHTML = newWord;
     currentTeam.passesUsed++;
   }
 }
-
 function leadToRoundPrep() {
   //clear Board
 while(list.firstChild) {
  list.removeChild(list.firstChild);
 }
-
   // empty wordsSuccessfullyDescribed array
   var currentTeam = teamObjectsArray[whichTeamPlays%teamObjectsArray.length];
   currentTeam.whichPlayersTurn += 1;
@@ -377,14 +356,46 @@ while(list.firstChild) {
   var mistakesWereMade = document.getElementById('passBtn');
   mistakesWereMade.parentNode.removeChild(mistakesWereMade);
   return;
+} else if(teamObjectsArray[0].roundsPlayed === teamObjectsArray[teamObjectsArray.length - 1].roundsPlayed) {
+  // After each team have played a round, show current standings
+  // Make sure Grammar is correct
+  let roundOrRounds;
+  if(teamObjectsArray[0].roundsPlayed == 1) { roundOrRounds = 'round';} else {
+    roundOrRounds = 'rounds';
+  }
+
+  var currentStandings = document.createElement('div');
+  var currentStandingsFiller = `<h1>After ${teamObjectsArray[0].roundsPlayed} ${roundOrRounds}...</h1>`
+  for(i = 0; i < teamObjectsArray.length; i++) {
+    let team = teamObjectsArray[i];
+    // Make sure Grammar is correct Again
+    let pointOrPoints;
+    if(team.position - 1 == 1) { pointOrPoints = 'point';} else {
+      pointOrPoints = 'points';
+    };
+    currentStandingsFiller += `<p>Team ${team.name} has ${team.position - 1} ${pointOrPoints}`;
+  }
+  // What happens when next round is clicked
+  function continueToRoundPrep() {
+    whichTeamPlays += 1;
+    var newTeam = teamObjectsArray[whichTeamPlays%teamObjectsArray.length];
+    readyBtn.removeEventListener('click', continueToRoundPrep);
+    while(list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
+    roundPrep(newTeam);
+  }
+  currentStandings.innerHTML = currentStandingsFiller;
+  readyBtn.addEventListener('click', continueToRoundPrep);
+  // button which continues the game
+  list.appendChild(currentStandings);
 } else {
-  whichTeamPlays += 1;
-  var newTeam = teamObjectsArray[whichTeamPlays%teamObjectsArray.length];
-  roundPrep(newTeam);
+  // If it is neither the end of an entire round nor has the game been won
+    whichTeamPlays += 1;
+    var newTeam = teamObjectsArray[whichTeamPlays%teamObjectsArray.length];
+    roundPrep(newTeam);
   }
 }
-
-
 function homePage() {
   while(list.firstChild) {
     list.removeChild(list.firstChild);

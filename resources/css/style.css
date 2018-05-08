@@ -145,6 +145,8 @@ li {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
     background-color: rgba(247, 255, 248, 0.1);
+    -webkit-background-color: rgba(247, 255, 248, 0.1);
+    -moz-background-color: rgba(247, 255, 248, 0.1);
     height: 2rem;
     border: none;
     border-bottom: 2px solid white;
@@ -205,7 +207,14 @@ input::placeHolder {
 }
 .teamNames, .playerContainer {
   margin-right: 0.5rem;
-
+}
+.teamNames {
+  color: white;
+  -webkit-color: white;
+  -moz-color: white;
+  placeHolder: white;
+  -webkit-placeHolder: white;
+  -moz-placeHolder: white;
 }
  .teamNames {
   margin-left: 0;

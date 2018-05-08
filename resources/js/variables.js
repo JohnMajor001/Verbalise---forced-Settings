@@ -1,17 +1,16 @@
 // NAME: VERBALISE?!!!!
 /* Things to do
                 Add More Categories + Themes (DISNEY THEME?!)
-                Rules - add images, make disappear during round
-                Quit Btn
+                Rules - add images
+                Quit Btn - should do the same as the home button at the end
                 Consider what may be necessary for 321 animation for all users
                 Trim input fields for security -- must be done from serverside for full security: honeypot done + max characters anyway
-                Design drinking rules to implement
-                Switch statement for picking appropriate drinking line according to category
+                More Drinking rules
                 Aesthetics - create front-page humorous animation,
                               Favicon/LOGO,
                               Make Team Name Box bigger,
-                              Final screen css - table is moved to the right;
-                Settings Page - Adding/Removing Catagories, animation once it's been saved.
+                              Final screen css
+                Settings Page - Adding/Removing Catagories, green positive animation once it's been saved.
                 Animation to show teams moving forward? - This could happen after every Team has moved e.g. one round for each team has passed.
                 Back to homepage - This will
                                           1. Show home page with team Names already entered in as per previous game
@@ -28,18 +27,11 @@
 
                 /* Create a drag and drop element
                       1. <img draggable="true">
-
                       */
-
-                      /* To Test
-                                Ending page returns to Home button
-                                That Honey pot doesn't fuck anything up
-                                WhichTeamPlays isn't dead
-                                */
 // Basic settings Changes
 var drinkRules = true;
 var toWin = 60;
-var timer = 30;
+var timer = 5;
 var maximumPasses = 3;
 
 var noOfTeams = 0;
@@ -60,7 +52,7 @@ var teamObjectsArray = [];
 var wordsSuccessfullyDescribed = [];
 var noMorePassesText = 'All Passes used!';
 var timesUpMessage = "Time's up!";
-var whichTeamPlays = 0; // Math.floor(Math.random() * (noOfTeams);
+var whichTeamPlays = 0;
 
 
 var categories = [];
@@ -411,7 +403,7 @@ var person = {
           drinkingLines: [//'Drink if you would gladly bang any of people in the list next to Got \'Em',
                           //'Drink if you have an irrational dislike of anyone in the list next to Got \'Em',
                           //'Take a vote with all present: which of you would lose a fight to the first person in the Got \'Em list? Those people must do a shot.',
-                          `, do an impression of one of the characters in the list above, whoever does the worst one drinks.`],
+                          `Do an impression of one of the characters in the list above, whoever does the worst one drinks.`],
 };
 var tempDrinkingRules = ['Describer, if anything you described is in the room with you now, drink twice.', 'Drink if you would rather not drink',
                   'Describer, you are now quiz master.', 'Describer you are now thumb master', `Describer: rock paper scissors with your team mate (of choice if you have two),
