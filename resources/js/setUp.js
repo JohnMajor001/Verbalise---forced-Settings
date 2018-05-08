@@ -156,6 +156,14 @@ setTimeout(function(){
                         </select>
                       </div>
                       <div class='settings-row'>
+                        <span>Difficulty</span>
+                        <select id='difficultySetting'>
+                          <option value='${kids}'>Kids</option>
+                          <option value='${normal}'>Regular</option>
+                          <option value='${expert}'>Expert</option>
+                        </select>
+                      </div>
+                      <div class='settings-row'>
                         <span>Choose Categories?</span>
                         <input type='checkBox' style="margin-right: -3rem;"></input>
                       </div>`;
