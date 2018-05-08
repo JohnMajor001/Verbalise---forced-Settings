@@ -149,12 +149,17 @@ setTimeout(function(){
                         </select>
                       </div>
                       <div class='settings-row'>
-                        <span>Drinking Rules</span>
+                        <span>Drinking Rules?</span>
                         <select id='drinkingSelect'>
-                          <option value='Disabled'>Disabled</option>
-                          <option value='Enabled'>Enabled</option>
+                          <option value='Disabled'>Not Today</option>
+                          <option value='Enabled'>Yes, baby!</option>
                         </select>
+                      </div>
+                      <div class='settings-row'>
+                        <span>Choose Categories?</span>
+                        <input type='checkBox' style="margin-right: -3rem;"></input>
                       </div>`;
+                      /**/
                       // INSERT SOMETHING SO THAT PEOPLE KNOW THAT THEY ARE DRINKING AT THEIR OWN RISK/SHOULD DRINK RESPONSIBLY ETC
 // Change relevant button functions
   document.getElementById('settingsContent').innerHTML = settingsHTML;

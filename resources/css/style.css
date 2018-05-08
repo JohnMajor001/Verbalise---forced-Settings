@@ -78,6 +78,15 @@ h1 {
   -1px 1px 0 black,
   1px 1px 0 black;
 }
+#settingsContent {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.settings-row, #settingsContent {
+  border: 1px solid black;
+}
 #settingsContent, #rulesContent h1, h1, .num, .statsTable th, .btn,
 .finalTable th {
   font-family: 'Press Start 2P', impact, helvetica, sans-serif;
@@ -131,6 +140,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
 }
 .settings-row {
   padding: 0.5rem;
